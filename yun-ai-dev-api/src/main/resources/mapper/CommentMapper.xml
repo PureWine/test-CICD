@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunai.mapper.CommentMapper" >
+  <!--<cache type="com.yunai.utils.RedisCache">-->
+    <!--<property name="eviction" value="LRU" />-->
+    <!--<property name="flushInterval" value="6000000" />-->
+    <!--<property name="size" value="1024" />-->
+    <!--<property name="readOnly" value="false" />-->
+  <!--</cache>-->
+
+  <resultMap id="BaseResultMap" type="com.yunai.pojo.Comment" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="c_id" property="cId" jdbcType="VARCHAR" />
+    <result column="from_image_id" property="fromImageId" jdbcType="VARCHAR" />
+    <result column="father_comment_id" property="fatherCommentId" jdbcType="VARCHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+
+  </resultMap>
+</mapper>

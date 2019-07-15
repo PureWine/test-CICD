@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunai.mapper.UserImageMapper" >
+  <!--<cache type="com.yunai.utils.RedisCache"/>-->
+  <resultMap id="BaseResultMap" type="com.yunai.pojo.UserImage" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="user_like" property="userLike" jdbcType="INTEGER" />
+    <result column="dislike" property="dislike" jdbcType="INTEGER" />
+  </resultMap>
+  <update id="addlike" parameterType="java.lang.String">
+    update user_image set user_image.user_like=user_image.user_like+1 where user_id=#{userId,jdbcType=VARCHAR}
+  </update>
+
+  <update id="cancalLike" parameterType="java.lang.String">
+    update user_image set user_image.user_like=user_image.user_like-1 where user_id=#{userId,jdbcType=VARCHAR}
+  </update>
+
+  <update id="addDislike" parameterType="java.lang.String">
+    update user_image set user_image.dislike=user_image.dislike+1 where user_id=#{userId,jdbcType=VARCHAR}
+  </update>
+
+  <update id="cancalDislike" parameterType="java.lang.String">
+    update user_image set user_image.dislike=user_image.dislike-1 where user_id=#{userId,jdbcType=VARCHAR}
+  </update>
+
+</mapper>
